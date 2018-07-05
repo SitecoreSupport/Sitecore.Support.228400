@@ -248,10 +248,11 @@
         this.model.set("showHiddenItems", this.$el.data("sc-showhiddenitems"));
         this.model.set("pagingMode", this.$el.attr("data-sc-pagingmode") || "appending"); // or paged
 
-        this.model.isReady = true;
+        //this.model.isReady = true; Removed by PSS to fix #228400
       },
 
       afterRender: function () {
+        this.model.isReady = true; //Added by PSS to fix #228400
         this.refresh();
       },
 
